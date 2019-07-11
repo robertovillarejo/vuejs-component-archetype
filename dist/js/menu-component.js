@@ -5,7 +5,7 @@
 }(this, function () { 'use strict';
 
   var script = {
-    name: 'menu',
+    name: 'menu-component',
     components: {},
     props: [],
 
