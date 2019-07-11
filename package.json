@@ -2,7 +2,8 @@
   "name": "menu",
   "version": "1.0.0",
   "description": "menu component for conacyt",
-  "main": "dist/menu-component.min.js",
+  "main": "dist/js/menu-component.js",
+  "unpkg": "dist/js/menu-component.min.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "NODE_ENV=production node_modules/.bin/rollup -c ./build/rollup.config.js && NODE_ENV=production BUILD_MODE=minify node_modules/.bin/rollup -c ./build/rollup.config.js"
