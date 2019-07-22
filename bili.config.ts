@@ -1,4 +1,6 @@
-module.exports = {
+import { Config } from 'bili';
+
+const config: Config = {
   input: "src/index.ts",
   output: {
     format: ["cjs", "umd", "esm"],
@@ -21,5 +23,8 @@ module.exports = {
       config.output.fileName = "[name].module.js";
     }
     return config;
-  }
-};
+  },
+  externals: ["vue-class-component", "vue-property-decorator"]
+}
+
+export default config;

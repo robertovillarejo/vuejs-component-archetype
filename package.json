@@ -1,7 +1,7 @@
 {
   "name": "@conacyt/hello-world",
   "version": "0.0.1",
-  "description": "A Hello World VueJS component.",
+  "description": "A Hello World VueJS component",
   "keywords": [
     "vue",
     "vuejs",
