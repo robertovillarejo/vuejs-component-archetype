@@ -48,7 +48,7 @@ var __vue_render__ = function __vue_render__() {
     domProps: {
       "textContent": _vm._s(_vm.options.prefix)
     }
-  }), _vm._v(" Hello World!\n")]);
+  }), _vm._v(" Hello World!")]);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -91,7 +91,7 @@ var HelloWorldComponent$1 = __vue_normalize__({
 
 var index = {
   install: function install(Vue, globalOptions) {
-    var options = __assign({}, defaultConfig, globalOptions);
+    var options = __assign(__assign({}, defaultConfig), globalOptions);
 
     Vue.prototype.$HELLO_WORLD_DEFAULT_OPTIONS = options;
     Vue.component('hello-world', HelloWorldComponent$1);

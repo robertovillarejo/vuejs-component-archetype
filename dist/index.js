@@ -4,7 +4,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var tslib_1 = require('tslib');
+var tslib = require('tslib');
 var Component = _interopDefault(require('vue-class-component'));
 var vuePropertyDecorator = require('vue-property-decorator');
 
@@ -22,7 +22,7 @@ var defaultConfig = new Options();
 var HelloWorldComponent =
 /** @class */
 function (_super) {
-  tslib_1.__extends(HelloWorldComponent, _super);
+  tslib.__extends(HelloWorldComponent, _super);
 
   function HelloWorldComponent() {
     return _super !== null && _super.apply(this, arguments) || this;
@@ -35,7 +35,7 @@ function (_super) {
     enumerable: true,
     configurable: true
   });
-  HelloWorldComponent = tslib_1.__decorate([Component], HelloWorldComponent);
+  HelloWorldComponent = tslib.__decorate([Component], HelloWorldComponent);
   return HelloWorldComponent;
 }(vuePropertyDecorator.Vue);
 
@@ -54,7 +54,7 @@ var __vue_render__ = function __vue_render__() {
     domProps: {
       "textContent": _vm._s(_vm.options.prefix)
     }
-  }), _vm._v(" Hello World!\n")]);
+  }), _vm._v(" Hello World!")]);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -97,7 +97,7 @@ var HelloWorldComponent$1 = __vue_normalize__({
 
 var index = {
   install: function install(Vue, globalOptions) {
-    var options = tslib_1.__assign({}, defaultConfig, globalOptions);
+    var options = tslib.__assign(tslib.__assign({}, defaultConfig), globalOptions);
 
     Vue.prototype.$HELLO_WORLD_DEFAULT_OPTIONS = options;
     Vue.component('hello-world', HelloWorldComponent$1);

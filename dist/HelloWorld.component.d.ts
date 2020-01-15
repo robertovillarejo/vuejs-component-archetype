@@ -6,5 +6,5 @@ export declare class Options {
 declare let defaultConfig: Options;
 export { defaultConfig };
 export default class HelloWorldComponent extends Vue {
-    readonly options: Options;
+    get options(): Options;
 }
