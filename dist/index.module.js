@@ -1,6 +1,17 @@
-import { __extends, __decorate } from 'tslib';
+import { __extends, __decorate, __assign } from 'tslib';
 import Component from 'vue-class-component';
 import { Vue } from 'vue-property-decorator';
+
+var Options =
+/** @class */
+function () {
+  function Options(prefix) {
+    this.prefix = prefix || '';
+  }
+
+  return Options;
+}();
+var defaultConfig = new Options();
 
 var HelloWorldComponent =
 /** @class */
@@ -11,6 +22,13 @@ function (_super) {
     return _super !== null && _super.apply(this, arguments) || this;
   }
 
+  Object.defineProperty(HelloWorldComponent.prototype, "options", {
+    get: function get() {
+      return this.$HELLO_WORLD_DEFAULT_OPTIONS || defaultConfig;
+    },
+    enumerable: true,
+    configurable: true
+  });
   HelloWorldComponent = __decorate([Component], HelloWorldComponent);
   return HelloWorldComponent;
 }(Vue);
@@ -26,7 +44,11 @@ var __vue_render__ = function __vue_render__() {
 
   var _c = _vm._self._c || _h;
 
-  return _c('h1', [_vm._v("Hello World Component")]);
+  return _c('h1', [_c('span', {
+    domProps: {
+      "textContent": _vm._s(_vm.options.prefix)
+    }
+  }), _vm._v(" Hello World!\n")]);
 };
 
 var __vue_staticRenderFns__ = [];
@@ -68,7 +90,10 @@ var HelloWorldComponent$1 = __vue_normalize__({
 }, __vue_inject_styles__, __vue_script__, __vue_scope_id__, __vue_is_functional_template__);
 
 var index = {
-  install: function install(Vue, options) {
+  install: function install(Vue, globalOptions) {
+    var options = __assign({}, defaultConfig, globalOptions);
+
+    Vue.prototype.$HELLO_WORLD_DEFAULT_OPTIONS = options;
     Vue.component('hello-world', HelloWorldComponent$1);
   }
 };

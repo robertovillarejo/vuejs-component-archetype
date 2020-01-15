@@ -6,9 +6,9 @@
 
 <script lang="ts">
 import Vue, { VueConstructor } from "vue";
-import HelloWorldComponent from "../src/HelloWorldComponent.vue";
+import HelloWorldComponent from "../src/index";
 
-export default Vue.extend({
-  components: { "hello-world": HelloWorldComponent }
-});
+Vue.use(HelloWorldComponent, { prefix: "CONACYT dice:" });
+
+export default Vue.extend({});
 </script>
